@@ -34,7 +34,7 @@ if ['solo', 'app', 'app_master'].include?(node[:instance_role])
       :port => "587",
       :domain => "youdesignit.com",
       :fromLineOverrides =>"YES",
-      :UseSTARTTLS => "YES",
+      :useSTARTTLS => "YES",
       :AuthUser => "no-reply@youdesignit.com",
       :AuthPass => "ydinoreply"
       })
