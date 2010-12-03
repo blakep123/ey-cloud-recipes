@@ -56,3 +56,6 @@ require_recipe "ssmtp"
 
 #uncomment to include the eybackup_verbose recipe
 #require_recipe "eybackup_verbose"
+
+#uncomment to include nginx_rewrite
+require_recipe "nginx_rewrite"
