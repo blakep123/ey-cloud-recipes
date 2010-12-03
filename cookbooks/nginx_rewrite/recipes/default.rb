@@ -5,9 +5,7 @@ require 'pp'
 #
 
 if ['solo', 'app', 'app_master'].include?(node[:instance_role])
-  node[:applications].each do |app_name, data| 
-    
-    
+  node[:applications].each do |app_name, data|   
     template "/etc/nginx/servers/#{app_name}.rewrites" do
       owner 'deploy'
       group 'deploy'
@@ -15,4 +13,10 @@ if ['solo', 'app', 'app_master'].include?(node[:instance_role])
       source "default.rewrites.erb"
     end
   end
+  
+  execute "restarting-nginx" do
+    command "/etc/init.d/nginx restart"
+  end
+  
+  
 end
