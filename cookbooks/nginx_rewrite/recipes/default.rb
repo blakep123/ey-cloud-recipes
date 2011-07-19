@@ -6,11 +6,11 @@ require 'pp'
 
 if ['solo', 'app', 'app_master'].include?(node[:instance_role])
   node[:applications].each do |app_name, data|   
-    template "/etc/nginx/servers/#{app_name}.rewrites" do
+    template "/etc/nginx/servers/#{app_name}.custom.conf" do
       owner 'deploy'
       group 'deploy'
       mode  0644
-      source "default.rewrites.erb"
+      source "server.conf.erb"
     end
   end
   
